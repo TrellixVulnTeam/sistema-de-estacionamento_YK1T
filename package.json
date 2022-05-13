@@ -1,0 +1,19 @@
+{
+  "name": "sistema-de-estacionamento",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "nodemon ./src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/annekarolinefc/sistema-de-estacionamento.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/annekarolinefc/sistema-de-estacionamento/issues"
+  },
+  "homepage": "https://github.com/annekarolinefc/sistema-de-estacionamento#readme"
+}
