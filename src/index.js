@@ -1,6 +1,6 @@
 //importando o express
 import express from 'express'; 
-import { get } from 'express/lib/response';
+import { openDatabase } from './database';
 const app = express();
 
 app.use(express.json())
@@ -13,27 +13,14 @@ app.get('/api/ping', (request, response) => {
 });
 
 //ENDPOINTS VEHICLES
-app.get('/api/vehicles', (request, response) =>{
-    const { id } = request.query;
-    const vehicles = [
-        {
-            id: 1, 
-            name: 'Onix 1.4', 
-            owner: 'Marcus Vinicius',
-            type: 'car'
-        }, 
-        {
-            id: 2, 
-            name: 'Cobalt Cinza', 
-            owner: 'Ana Carla',
-            type: 'car'
-        },
-    ]
-
-    if(id){
-        response.send(vehicles.filter(vehicles => vehicles.id ==id));
-        return;
-    }
+app.get('/api/vehicles', async (request, response) =>{
+    const db = await openDatabase();
+    const vehicles = await db.all(
+        `
+        SELECT *
+        FROM vehicles
+        `
+    );
     response.send(vehicles)
 })
 
