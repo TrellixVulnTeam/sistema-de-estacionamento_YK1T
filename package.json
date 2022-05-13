@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/annekarolinefc/sistema-de-estacionamento/issues"
   },
-  "homepage": "https://github.com/annekarolinefc/sistema-de-estacionamento#readme"
+  "homepage": "https://github.com/annekarolinefc/sistema-de-estacionamento#readme",
+  "dependencies": {
+    "nodemon": "^2.0.16"
+  }
 }
