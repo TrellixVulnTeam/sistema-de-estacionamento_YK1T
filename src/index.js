@@ -14,7 +14,8 @@ app.get('/api/ping', (request, response) => {
 
 //ENDPOINTS VEHICLES
 app.get('/api/vehicles', (request, response) =>{
-    response.send([
+    const { id } = request.query;
+    const vehicles = [
         {
             id: 1, 
             name: 'Onix 1.4', 
@@ -27,11 +28,17 @@ app.get('/api/vehicles', (request, response) =>{
             owner: 'Ana Carla',
             type: 'car'
         },
-    ])
+    ]
+
+    if(id){
+        response.send(vehicles.filter(vehicles => vehicles.id ==id));
+        return;
+    }
+    response.send(vehicles)
 })
 
 
 //subir o servidor na porta 8000
-app.listen(8000, ()=>{
-    console.log("Servidor funcionando na porta 8000...")
+app.listen(3030, ()=>{
+    console.log("Servidor funcionando na porta 3030...")
 })
