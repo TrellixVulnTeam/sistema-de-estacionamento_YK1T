@@ -37,6 +37,17 @@ app.get('/api/vehicles', (request, response) =>{
     response.send(vehicles)
 })
 
+app.post('/api/vehicles', (request, response) => {
+
+})
+
+app.put('/api/vehicles/:id', (request, response) => {
+    
+})
+
+app.delete('/api/vehicles/:id', (request, response) => {
+    
+})
 
 //subir o servidor na porta 8000
 app.listen(3030, ()=>{
